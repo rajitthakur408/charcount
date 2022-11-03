@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+//To find character occurrence from the string.-----------------------qqqq------------------------
+//inside a function with input as a string.
+    // iterate a loop throughout the string.
+    // and check the charecter with haswon from the object.
+    // if its true then will increase the count(count will be the value for each key and key will be the character).
+    // if its not true then will add that character with count 0 inside the object.
+    // after that we can print the object.
+//----------------------------------------------------------------------------------
+
+let obj = {};
+
+const mufun = function(string){ 
+
+    for(let i=0; i<string.length; i++){
+
+        if(obj.hasOwnProperty(string[i])){
+            obj[string[i]]= ++obj[string[i]]
+        }
+        else{
+            obj[string[i]] = 1
+        }
+    }
+    console.log(obj)
+}
+mufun('bhgfdsawddcvgbbhnbhhbhngbnbnmmkmlmjnijhbygcdzxrtyguhbn');
+
+//---------------------------with reduce
+
+let text = 'hagcsdhbsdkjfn'
+
+let arr = text.split("")
+
+let result = arr.reduce((acc, curr) =>{
+    if (acc.hasOwnProperty(curr)){
+        acc[curr]++
+    }
+    else{
+        acc[curr]=1
+    }
+    return acc
+}, {} )
+
+console.log(result)
+console.log(arr)
+
+
+
+</script>
+</html>
